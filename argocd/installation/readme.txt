@@ -15,3 +15,15 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 http://localhost:8080/
+
+
+
+
+
+
+
+
+kubectl config current-context
+kubectl config get-contexts
+kubectl config use-context <context_name>
+
