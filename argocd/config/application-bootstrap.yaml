@@ -7,8 +7,8 @@ spec:
     name: 'in'
     namespace: 'argocd'
   source:
-    path: ./
-    repoURL: ''
+    path: ./apps/demo-bootstarp-apps/
+    repoURL: 'https://github.com/elmustapha-doumghordi/onepercent.git'
     targetRevision: bootstrap
     directory:
       recurse: true

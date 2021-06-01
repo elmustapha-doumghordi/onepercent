@@ -7,7 +7,7 @@ spec:
     name: 'in-cluster'
     namespace: 'argocd'
   source:
-    path: ./
-    repoURL: ''
-    targetRevision: bootstrap
+    path: ./apps/demo-simple-apps/
+    repoURL: 'https://github.com/elmustapha-doumghordi/onepercent.git'
+    targetRevision: master
   project: onepercent
