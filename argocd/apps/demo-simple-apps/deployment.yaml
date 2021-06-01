@@ -1,18 +1,19 @@
----
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-deployment
-  namespace: default
 spec:
-  replicas: 1
+  selector:
+    matchLabels:
+      run: hello-deployment
+  replicas: 2
   template:
     metadata:
       labels:
-        run: hello-world
+        run: hello-deployment
     spec:
       containers:
-      - name: hello
+      - name: hello-deployment
         image: nginx:stable-alpine
         ports:
         - containerPort: 80
