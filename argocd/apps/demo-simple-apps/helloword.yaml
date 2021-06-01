@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: nginxdemos/hello:latest
+        image: nginx:stable-alpine
         ports:
         - containerPort: 80
 

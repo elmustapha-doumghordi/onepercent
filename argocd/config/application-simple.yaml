@@ -1,13 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-simplesimple
+  name: application-simple
 spec:
   destination:
     name: 'in-cluster'
     namespace: 'argocd'
   source:
-    path: ./apps/demo-simple-apps/
+    path: ./argocd/apps/demo-simple-apps/
     repoURL: 'https://github.com/elmustapha-doumghordi/onepercent.git'
-    targetRevision: master
+    targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
   project: onepercent
