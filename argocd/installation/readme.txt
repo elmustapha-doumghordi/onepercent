@@ -22,20 +22,32 @@ argocd account update-password
 
 create app via ligne de commande :)
 
-argocd app create react-app --repo https://github.com/anais-codefresh/react-article-display.git --path charts/example-chart --dest-server https://kubernetes.default.svc --dest-namespace default
-
+argocd app create react-app --repo https://github.com/elmustapha-doumghordi/onepercent.git --path argocd/apps/demo-simple-apps-helm-chart/example-chart --dest-server https://kubernetes.default.svc --dest-namespace onepercent
 
 argocd app get react-app
 argocd app sync react-app
 
 patching ;) value ...
 kubectl patch svc react-app-example-chart --type='json' -p '[{"op":"replace","path":"/spec/type","value":"NodePort"}]'
+kubectl port-forward react-app-example-chart  -n onepercent  8082:80
 argocd app get react-app
 
 
+- argocd app create helloword-app --repo https://github.com/elmustapha-doumghordi/onepercent.git --path argocd/apps/demo-simple-apps-helm-chart/hello-world-chart --dest-server https://kubernetes.default.svc --dest-namespace onepercent
+- argocd app sync helloword-app
+patch augmentation de nombre de replicat ou l'inverse :)
+
+  kubectl patch deployment  hello-world-app  --type="json" -p "[{'op':'replace','path':'/spec/replicas','value':2}]" -n onepercent
+
+Self-healing option ;)
 
 
-kubectl config current-context
-kubectl config get-contexts
-kubectl config use-context <context_name>
+
+declartif apps 
+  clé xoxb-2148198038305-2159393302912-q8kJJSM68D7X5NNIkVzlVU4F
+
+
+- kubectl config current-context
+- kubectl config get-contexts
+- kubectl config use-context <context_name>
 
