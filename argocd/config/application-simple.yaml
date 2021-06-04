@@ -3,12 +3,6 @@ kind: Application
 metadata:
   name: application-simple
   annotations:
-    notifications.argoproj.io/subscribe.app-deployed.slack: notif-demo-argocd
-    notifications.argoproj.io/subscribe.app-health-degraded.slack: notif-demo-argocd
-    notifications.argoproj.io/subscribe.app-sync-failed.slack: notif-demo-argocd
-    notifications.argoproj.io/subscribe.app-sync-running.slack: notif-demo-argocd
-    notifications.argoproj.io/subscribe.app-sync-status-unknown.slack: notif-demo-argocd
-    notifications.argoproj.io/subscribe.app-sync-succeeded.slack: notif-demo-argocd
     notifications.argoproj.io/subscribe.on-deployed.slack: notif-demo-argocd
     notifications.argoproj.io/subscribe.on-health-degraded.slack: notif-demo-argocd
     notifications.argoproj.io/subscribe.on-sync-failed.slack: notif-demo-argocd
